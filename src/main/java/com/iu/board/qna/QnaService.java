@@ -23,7 +23,7 @@ public class QnaService implements BoardService {
 	private QnaDAO qnaDAO;
 	@Inject
 	private FileDAO fileDAO;
-	@Inject//Inject 안 하고 객체 만들어서 사용해도 상관 없음
+	//@Inject : Inject 안 하고 객체 만들어서 사용해도 상관 없음
 	private FileSaver fileSaver;
 	
 	//reply
@@ -51,7 +51,7 @@ public class QnaService implements BoardService {
 				FileDTO fileDTO = new FileDTO();
 				fileDTO.setNum(boardDTO.getNum());
 				fileDTO.setOname(file.getOriginalFilename());
-				fileDTO.setFname(fileSaver.saveFile(realPath, file));
+				fileDTO.setFname(fileSaver.saveFile3(realPath, file));
 				files.add(fileDTO);
 			}
 		}
